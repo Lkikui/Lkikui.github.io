@@ -163,8 +163,7 @@ img.photoOfMe {
 
 .heading {
     margin-top: 2em;
-    font-family: 'Pacifico', Helvetica, sans-serif;
-    font-size: 30pt;
+    font: 400 40px/1.5 'Pacifico', Helvetica, sans-serif;
     text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
 }
 
