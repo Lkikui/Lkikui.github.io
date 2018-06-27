@@ -14,6 +14,13 @@ body {
 
 button:focus { outline: 0; } /* remove outline when buttons are clicked */
 
+hr {
+    width: 50px;
+    border-width: 3px;
+    border-color: #FC4A1A;
+    margin-bottom: 3em;
+}
+
 /* =================
     Navigation Bar 
 ================= */
@@ -21,7 +28,7 @@ button:focus { outline: 0; } /* remove outline when buttons are clicked */
 #myLogo {
     width: 9em;
     padding: 0;
-    margin: 0;
+    text-align: center;
 }
 
 nav img {
@@ -98,6 +105,8 @@ div.anchor::before {
     margin: 1em;
 }
 
+.btn:hover { background-color: rgb(160, 48, 17) }
+
 #homeSection h1 {
     font-size: 50pt;
 }
@@ -107,28 +116,56 @@ div.anchor::before {
 ==================== */
 
 #aboutMeSection {
-    padding-bottom: 3em;
+    position: relative;
+    margin-top: 5em;
+    padding-bottom: 5em;
+    background-color: #DFDCE3;
 }
 
-.techLogos {
-    width: 75%;
+#aboutMeSection > .aboutMeContents {
+    width: 55%;
     margin: 0 auto;
 }
 
+#aboutMeSection h2 { 
+    margin: 0;
+    color: black;
+}
+
+img.photoOfMe {
+    display: block;
+    margin: 0 auto;
+    margin-top: 4em;
+    border-radius: 50%;
+    width: 20%;
+}
+
+.aboutMeContents > .paragraphs {
+    display: block;
+    margin: 0 auto;
+    margin-top: 3em !important;
+    width: 70%;
+    padding: 1em;
+    background-color: #4ABDAC;
+    box-shadow: 20px 20px #1F1F1F;
+}
+
+#aboutMeSection p {
+    color: #fff;
+    font-size: 13.1pt;
+    line-height: 1.6;
+}
+
+#aboutMeSection p:last-of-type { margin-top: 2em; }
+
 .heading {
-    margin: 2em;
+    margin-top: 2em;
     color: #4ABDAC;
     letter-spacing: 5px;
 }
 
-.photoOfMe {
-    display: inline-block;
-    width: 19.5%;
-    box-shadow: 5px 10px 18px #858484;
-    margin-left: 12em;
-}
 
-.aboutMe {
+/* .aboutMe {
     display: inline-block;
     vertical-align: middle;
     margin-left: 3em;
@@ -143,11 +180,7 @@ div.anchor::before {
 .aboutMe h4 {
     text-align: center;
     margin-top: 2em;
-}
-
-p {
-    line-height: 1.6;
-}
+} */
 
 /* ================
     Skills Section
@@ -414,12 +447,14 @@ a svg:hover {
     width: 10.5em;
 }
 
-/* footer  */
+/* =========
+    footer 
+=========== */
+
 .footer {
     background-color: #222;
     color: white;
     margin: 0;
-    /* height: 3em; */
 }
 
 #footerLogo {
