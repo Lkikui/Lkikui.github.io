@@ -215,8 +215,8 @@ img.photoOfMe {
 ============= */
 
 #projectSection {
-    background-color: #4ABDAC;
-    color: white;
+    background-color: #4ABDAC !important;
+    color: white !important;
     padding-bottom: 3em;
 }
 
