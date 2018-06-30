@@ -34,9 +34,9 @@ hr {
     margin: 0;
 }
 
-/* =================
-    Navigation Bar 
-================= */
+/* ==================
+    Navigation Bar   
+================== */
 
 /* <a> tag logo is nested in */
 #myLogo {
@@ -146,7 +146,7 @@ img.photoOfMe {
     display: block;
     margin: 0 auto;
     margin-top: 3em !important;
-    width: 70%;
+    /* width: 70%; */
     padding: 1em;
     background-color: #4ABDAC;
     color: white;
