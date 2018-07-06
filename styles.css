@@ -391,7 +391,7 @@ img.photoOfMe {
     img.photoOfMe { width: 16%; }
 
     /* skills section */
-    #skillSection div { height: 28vh; }
+    #skillSection div { height: 35vh; }
     #skillSection div:last-of-type { margin-top: 2em; }
 }
 /* .col-sm  */
