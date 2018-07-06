@@ -18,12 +18,12 @@ button:focus { outline: 0 !important; } /* remove blue outline when buttons are 
 .heading {
     margin-top: 0;
     color: black;
-    font: 400 40px/1.5 'Pacifico', Helvetica, sans-serif; /* Google Font */
+    font-family: 'Pacifico', Helvetica, sans-serif; /* Google Font */
     text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
 }
 
 hr {
-    width: 70px;
+    width: 6%;
     border-width: 3px;
     border-color: #FC4A1A;
     margin-bottom: 3em;
@@ -32,6 +32,18 @@ hr {
 .container-fluid {
     padding: 0;
     margin: 0;
+}
+
+/* shift scrollspy scrolling to match top of anchor elements */
+#aboutMeSection.anchor::before,
+#skillSection.anchor::before,      /* selecting every section other than home section */
+#projectSection.anchor::before,
+#contactSection.anchor::before {
+    content: ''; 
+    display: block; 
+    position: relative;
+    width: 0; 
+    height: 5em;
 }
 
 /* ==================
@@ -62,23 +74,14 @@ ul.nav a:hover {
     background-color: #FC4A1A !important;
 }
 
-/* shift scrollspy scrolling to match top of anchor elements */
-div.anchor::before {
-    content: ''; 
-    display: block; 
-    position: relative;
-    width: 0; 
-    height: 5em; 
-    margin-top: -5em 
-}
-
 /* ==============
     Home Section
 =============== */
 
 #homeSection {
-    height: 104.2vh; /* allows for height of navbar */
+    height: 100%;
     padding: 0;
+    margin-bottom: 0;
     width: 100%;
     color:white;
 }
@@ -98,10 +101,7 @@ div.anchor::before {
     transform: translate(-50%, -50%);
 }
 
-.buttons {
-    width: 322px;
-    margin: 0 auto;
-}
+#homeSection .buttons { margin: 0 auto; }
 
 #homeSection .btn {
     background-color: #FC4A1A;
@@ -115,7 +115,6 @@ div.anchor::before {
 #homeSection h1 {
     font-family: 'Pacifico', Helvetica, sans-serif; /* Google Font */
     text-shadow: 3px 3px 0px rgba(0,0,0,0.2), 7px 7px 0px rgba(0,0,0,0.06);
-    font-size: 55pt;
     margin-bottom: 0.4em;
 }
 
@@ -124,34 +123,28 @@ div.anchor::before {
 ==================== */
 
 #aboutMeSection {
-    position: relative;
     padding-bottom: 5em;
     background-color: #DFDCE3;
-}
-
-#aboutMeSection > .aboutMeContents {
-    width: 55%;
-    margin: 0 auto;
 }
 
 img.photoOfMe {
     display: block;
     margin: 0 auto;
-    margin-top: 4em;
+    margin-top: 3em;
     border-radius: 50%;
-    width: 20%;
 }
 
-.aboutMeContents > .paragraphs {
+.paragraphs {
     display: block;
     margin: 0 auto;
+    height: 50%;
     margin-top: 3em !important;
-    /* width: 70%; */
+    max-width: 50%;
     padding: 1em;
     background-color: #4ABDAC;
     color: white;
     box-shadow: 20px 20px #1F1F1F;
-    font-size: 13.1pt;
+    font-size: auto;
     line-height: 1.6;
 }
 
@@ -162,52 +155,21 @@ img.photoOfMe {
 ================== */
 
 #skillSection {
-    width: 41.8em;
-    margin-top: 5em;
-    padding-bottom: 7em;
+    padding: 0 6em 6em 6em;
+}
+
+#skillSection div {
+    padding: 0.5em;
+    margin-bottom: 1em;
 }
 
 #skillSection p {
-    margin-bottom: 2em;
-    font-size: 12pt;
+    text-align: center;
 }
 
 .skillCategory {
-    color: #F7B733;
-    font-size: 12pt;
-}
-
-/* the technologies */
-#frontEnd span {
-    margin-right: 2em;
-}
-
-#languages span{ 
-    margin-right: 7.7em;
-}
-
-#backEnd span {
-    margin-right: 8.2em;
-}
-
-#devTools span {
-    margin-right: 4em;
-}
-
-#methodology span {
-    margin-right: 6.6em;
-}
-
-#methodology {
-    white-space: nowrap;
-}
-
-#serverSide span {
-    margin-right: 7.3em;
-}
-
-#fullStackFrameworks span{
-    margin-right: 6.8em;
+    color: #4ABDAC;
+    font-weight: bold;
 }
 
 /* ===========
@@ -304,7 +266,6 @@ img.photoOfMe {
 
 .modal p, h5 {
     color: #6F6F6F;
-    font-size: 1vw;
 }
 
 .modal h5, .modal img { margin-bottom: 2em; }
@@ -370,13 +331,6 @@ img.photoOfMe {
     cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 90%;
-    }
-}
-
 /* ====================
     contact me section 
 ====================== */
@@ -416,4 +370,77 @@ img.photoOfMe {
     margin: 0 auto;
     padding: 3em;
     width: 13em;
+}
+
+/* ===============
+    Media Queries
+================ */
+
+/* .col-xs */
+@media only screen and (max-width: 767px) {
+    .heading { font-size: 22pt; }
+    p { font-size: 10pt; }
+
+    /* home section */
+    #homeSection h1 { font-size: 35pt; }
+    #homeSection h2 { font-size: 16pt; }
+    .buttons { width: 257px; }
+    .btn { font-size: 8pt; }
+
+    /* about me section */
+    img.photoOfMe { width: 16%; }
+
+    /* skills section */
+    #skillSection div { height: 21vh; }
+    #skillSection div:last-of-type { margin-top: 2em; }
+}
+/* .col-sm  */
+@media only screen and (min-width: 768px) {
+    .heading { font-size: 24pt; }
+    p { font-size: 10pt; }
+
+    /* home section */
+    #homeSection h1 { font-size: 40pt; }
+    #homeSection h2 { font-size: 18pt; }
+    .buttons { width: 283px; }
+    .btn { font-size: 9pt; }
+
+    /* about me section */
+    img.photoOfMe { width: 14%; }
+
+    /* skills section */
+    #skillSection div { height: 21vh; }
+}
+/* .col-md */
+@media only screen and (min-width: 992px) {
+    .heading { font-size: 26pt; }
+    p { font-size: 12pt; }
+
+    /* home section */
+    #homeSection h1 { font-size: 45pt; }
+    #homeSection h2 { font-size: 20pt; }
+    .buttons { width: 309px; }
+    .btn { font-size: 10pt; }
+
+    /* about me section */
+    img.photoOfMe { width: 14%; }
+
+    /* skills section */
+    #skillSection div { height: 23vh; }
+}
+/* .col-lg */
+@media only screen and (min-width: 1200px) {
+    .heading { font-size: 30pt; }
+    p { font-size: 14pt; }
+
+    /* home section */
+    #homeSection h1 { font-size: 50pt; }
+    #homeSection h2 { font-size: 22pt; }
+    .buttons { width: 322px; }
+
+    /* about me section */
+    img.photoOfme { width: 10%; }
+
+    /* skills section */
+    #skillSection div { height: 26vh; }
 }
